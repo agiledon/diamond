@@ -5,4 +5,13 @@ The pattern of Diamond Symmetry Architecture is based on Clean Architecture prov
 Diamond Symmetry Architecture suggests the whole bounded context should be composed by inner domain layer and outer gateway layers. According to the different direction of invoking request, the outer gateway layers contains the northbound gateway and the southbound gateway. Here is the diagram of this pattern:
 ![Diamond Symmetry Architecture](/doc/images/diamond.png)
 
+The components of Diamond Symmetry Architecture and their descriptions are as below:
+* Domain: It contains domain model composed by domain services, aggregates(entities and value objects) and domain events
+* Northbound Gateway: It embodies the OHS(Open Host Service) pattern of context mapping, and contains:
+	* remote: It provides the remote services which can be called across processes via RPC, HTTP, AMOP protocols etc.
+	* local: In fact, it's an application service in DDD layered architecture. At the same time, it also contains message contracts which demonstrate the Published Language pattern of context mapping.
+* Southbound Gateway: It embodies the ACL(Anti-Corruption Layer) pattern of context mapping, and contains:
+	* port: It is the abstract layer which provides the access ports to the external environments including DB, files, network, and other bounded contexts. 
+	* adapter: It is the implementation of the port.       	
+
 
