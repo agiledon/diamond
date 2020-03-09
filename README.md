@@ -1,11 +1,11 @@
-# Diamond Symmetry Architecture
+# Rhombic Symmetric Architecture
 
-The pattern of Diamond Symmetry Architecture is based on Clean Architecture provided by Robert Martin, and borrowed some idea from Hexagon and Layered Architecture. This pattern should be recognized as DDD(Domain-Driven Design) pattern which is used in the strategic design phase. It can help us to create the clean architecture on bounded context level.
+The pattern of Rhombic Symmetric Architecture which nickname is "diamond" is based on Clean Architecture provided by Robert Martin, and borrowed some idea from Hexagon and Layered Architecture. This pattern should be recognized as DDD(Domain-Driven Design) pattern which is used in the strategic design phase. It can help us to create the clean architecture on bounded context level.
 
-Diamond Symmetry Architecture suggests the whole bounded context should be composed by inner domain layer and outer gateway layers. According to the different direction of invoking request, the outer gateway layers contains the northbound gateway and the southbound gateway. Here is the diagram of this pattern:
-![Diamond Symmetry Architecture](/doc/images/diamond.png)
+Rhombic Symmetric Architecture suggests the whole bounded context should be composed by inner domain layer and outer gateway layers. According to the different direction of invoking request, the outer gateway layers contains the northbound gateway and the southbound gateway. Here is the diagram of this pattern:
+![Rhombic Symmetric Architecture](/doc/images/diamond.png)
 
-The components of Diamond Symmetry Architecture and their descriptions are as below:
+The components of Rhombic Symmetric Architecture and their descriptions are as below:
 * Domain: It contains domain model composed by domain services, aggregates(entities and value objects) and domain events
 * Northbound Gateway: It embodies the OHS(Open Host Service) pattern of context mapping, and contains:
 	* remote: It provides the remote services which can be called across processes via RPC, HTTP, AMOP protocols etc.
