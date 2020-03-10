@@ -1,6 +1,4 @@
-package xyz.zhangyi.diamond.demo.ordercontext.ohs.local.appservices.exceptions;
-
-import xyz.zhangyi.diamond.demo.ordercontext.domain.exceptions.DomainException;
+package xyz.zhangyi.diamond.demo.foundation.exceptions;
 
 public class ApplicationException extends RuntimeException {
     public ApplicationException(String message, DomainException ex) {

@@ -24,6 +24,8 @@
     <modules>
         <module>diamond-order</module>
         <module>diamond-inventory</module>
+        <module>diamond-notification</module>
+        <module>diamond-foundation</module>
     </modules>
 
 
