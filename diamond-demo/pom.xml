@@ -23,6 +23,7 @@
 
     <modules>
         <module>diamond-order</module>
+        <module>diamond-inventory</module>
     </modules>
 
 
