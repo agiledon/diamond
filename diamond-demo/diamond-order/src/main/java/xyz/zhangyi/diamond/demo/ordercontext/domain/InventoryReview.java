@@ -1,7 +1,7 @@
 package xyz.zhangyi.diamond.demo.ordercontext.domain;
 
-public class Order {
-    public boolean isValid() {
+public class InventoryReview {
+    public boolean isAvailable() {
         return false;
     }
 }
