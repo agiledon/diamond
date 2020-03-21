@@ -7,6 +7,8 @@ import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.clients.InventoryClient;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.CheckingInventoryRequest;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.InventoryReviewResponse;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.LockingInventoryRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 
 @Component
 public class InventoryClientAdapter implements InventoryClient {
@@ -16,12 +18,15 @@ public class InventoryClientAdapter implements InventoryClient {
     private RestTemplate restTemplate;
 
     @Override
-    public InventoryReviewResponse check(CheckingInventoryRequest request) {
-        return restTemplate.postForObject(INVENTORIES_RESOURCE_URL, request, InventoryReviewResponse.class);
+    public InventoryReview check(Order order) {
+        CheckingInventoryRequest request = CheckingInventoryRequest.from(order);
+        InventoryReviewResponse reviewResponse = restTemplate.postForObject(INVENTORIES_RESOURCE_URL, order, InventoryReviewResponse.class);
+        return reviewResponse.to();
     }
 
     @Override
-    public void lock(LockingInventoryRequest request) {
-        restTemplate.put(INVENTORIES_RESOURCE_URL, request);
+    public void lock(Order order) {
+        LockingInventoryRequest inventoryRequest = LockingInventoryRequest.from(order);
+        restTemplate.put(INVENTORIES_RESOURCE_URL, inventoryRequest);
     }
 }

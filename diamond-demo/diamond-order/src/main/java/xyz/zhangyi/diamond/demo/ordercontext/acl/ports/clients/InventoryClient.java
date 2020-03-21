@@ -1,10 +1,9 @@
 package xyz.zhangyi.diamond.demo.ordercontext.acl.ports.clients;
 
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.CheckingInventoryRequest;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.InventoryReviewResponse;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.LockingInventoryRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 
 public interface InventoryClient {
-    InventoryReviewResponse check(CheckingInventoryRequest request);
-    void lock(LockingInventoryRequest from);
+    InventoryReview check(Order order);
+    void lock(Order order);
 }

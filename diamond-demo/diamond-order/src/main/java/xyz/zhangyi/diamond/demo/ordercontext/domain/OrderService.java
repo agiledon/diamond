@@ -3,9 +3,6 @@ package xyz.zhangyi.diamond.demo.ordercontext.domain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.clients.InventoryClient;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.CheckingInventoryRequest;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.InventoryReviewResponse;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.LockingInventoryRequest;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.repositories.OrderRepository;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.exceptions.InvalidOrderException;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.exceptions.NotEnoughInventoryException;
@@ -22,16 +19,12 @@ public class OrderService {
             throw new InvalidOrderException();
         }
 
-        CheckingInventoryRequest inventoryRequest = CheckingInventoryRequest.from(order);
-        InventoryReviewResponse reviewResponse = inventoryClient.check(inventoryRequest);
-        InventoryReview inventoryReview = reviewResponse.to();
-
+        InventoryReview inventoryReview = inventoryClient.check(order);
         if (!inventoryReview.isAvailable()) {
             throw new NotEnoughInventoryException();
         }
 
         orderRepository.add(order);
-
-        inventoryClient.lock(LockingInventoryRequest.from(order));
+        inventoryClient.lock(order);
     }
 }
