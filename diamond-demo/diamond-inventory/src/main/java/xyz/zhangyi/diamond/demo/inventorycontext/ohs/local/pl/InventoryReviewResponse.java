@@ -6,4 +6,8 @@ public class InventoryReviewResponse {
     public static InventoryReviewResponse from(InventoryReview inventoryReview) {
         return null;
     }
+
+    public InventoryReview to() {
+        return null;
+    }
 }
