@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.notificationcontext.acl.ports.pl;
+package xyz.zhangyi.diamond.demo.notificationcontext.acl.adapters.pl;
 
 import xyz.zhangyi.diamond.demo.notificationcontext.domain.Customer;
 

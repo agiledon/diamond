@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.clients.InventoryClient;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.CheckingInventoryRequest;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.InventoryReviewResponse;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl.LockingInventoryRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.CheckingInventoryRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.InventoryReviewResponse;
+import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.LockingInventoryRequest;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 
@@ -19,8 +19,8 @@ public class InventoryClientAdapter implements InventoryClient {
 
     @Override
     public InventoryReview check(Order order) {
-        CheckingInventoryRequest request = CheckingInventoryRequest.from(order);
-        InventoryReviewResponse reviewResponse = restTemplate.postForObject(INVENTORIES_RESOURCE_URL, order, InventoryReviewResponse.class);
+        CheckingInventoryRequest inventoryRequest = CheckingInventoryRequest.from(order);
+        InventoryReviewResponse reviewResponse = restTemplate.postForObject(INVENTORIES_RESOURCE_URL, inventoryRequest, InventoryReviewResponse.class);
         return reviewResponse.to();
     }
 

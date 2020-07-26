@@ -1,7 +1,7 @@
 package xyz.zhangyi.diamond.demo.notificationcontext.acl.ports.clients;
 
-import xyz.zhangyi.diamond.demo.notificationcontext.acl.ports.pl.CustomerResponse;
+import xyz.zhangyi.diamond.demo.notificationcontext.domain.Customer;
 
 public interface CustomerClient {
-    CustomerResponse customerOf(String customerId);
+    Customer customerOf(String customerId);
 }

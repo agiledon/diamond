@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.ordercontext.acl.ports.pl;
+package xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl;
 
 import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 
