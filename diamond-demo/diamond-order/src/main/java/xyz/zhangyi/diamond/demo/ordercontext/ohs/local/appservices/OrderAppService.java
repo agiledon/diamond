@@ -10,7 +10,7 @@ import xyz.zhangyi.diamond.demo.foundation.exceptions.DomainException;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.publishers.EventPublisher;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.OrderService;
-import xyz.zhangyi.diamond.demo.ordercontext.ohs.local.pl.OrderPlacedEvent;
+import xyz.zhangyi.diamond.demo.ordercontext.ohs.local.pl.OrderPlaced;
 import xyz.zhangyi.diamond.demo.ordercontext.ohs.local.pl.PlacingOrderRequest;
 
 @Service
@@ -28,7 +28,7 @@ public class OrderAppService {
             Order order = request.to();
             orderService.placeOrder(order);
 
-            OrderPlacedEvent orderPlaced = OrderPlacedEvent.from(order);
+            OrderPlaced orderPlaced = OrderPlaced.from(order);
             eventPublisher.publish(orderPlaced);
         } catch (DomainException ex) {
             logger.warn(ex.getMessage());

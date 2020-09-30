@@ -3,16 +3,16 @@ package xyz.zhangyi.diamond.demo.notificationcontext.ohs.remote.subscribers;
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
-import xyz.zhangyi.diamond.demo.notificationcontext.ohs.local.appservices.NotificationAppService;
-import xyz.zhangyi.diamond.demo.notificationcontext.ohs.local.pl.OrderPlacedEvent;
+import xyz.zhangyi.diamond.demo.notificationcontext.ohs.local.handlers.OrderPlacedEventHandler;
+import xyz.zhangyi.diamond.demo.notificationcontext.ohs.local.pl.OrderPlaced;
 
 public class EventSubscriber {
     @Autowired
-    private NotificationAppService notificationAppService;
+    private OrderPlacedEventHandler eventHandler;
 
     @KafkaListener(id = "order-placed", clientIdPrefix = "order", topics = {"topic.e-commerce.order"}, containerFactory = "containerFactory")
     public void subscribeEvent(String eventData) {
-        OrderPlacedEvent orderPlacedEvent = JSON.parseObject(eventData, OrderPlacedEvent.class);
-        notificationAppService.notifyToCustomer(orderPlacedEvent);
+        OrderPlaced orderPlaced = JSON.parseObject(eventData, OrderPlaced.class);
+        eventHandler.handle(orderPlaced);
     }
 }
