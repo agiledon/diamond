@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import xyz.zhangyi.diamond.demo.foundation.exceptions.ApplicationException;
 import xyz.zhangyi.diamond.demo.foundation.exceptions.DomainException;
+import xyz.zhangyi.diamond.demo.foundation.stereotype.Local;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.publishers.EventPublisher;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.OrderService;
@@ -14,6 +15,7 @@ import xyz.zhangyi.diamond.demo.ordercontext.ohs.local.pl.OrderPlaced;
 import xyz.zhangyi.diamond.demo.ordercontext.ohs.local.pl.PlacingOrderRequest;
 
 @Service
+@Local
 public class OrderAppService {
     @Autowired
     private OrderService orderService;

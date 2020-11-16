@@ -3,6 +3,8 @@ package xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.clients;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import xyz.zhangyi.diamond.demo.foundation.stereotype.Adapter;
+import xyz.zhangyi.diamond.demo.foundation.stereotype.PortType;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.clients.InventoryClient;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.CheckingInventoryRequest;
 import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.InventoryReviewResponse;
@@ -11,6 +13,7 @@ import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 
 @Component
+@Adapter(PortType.Client)
 public class InventoryClientAdapter implements InventoryClient {
     private static final String INVENTORIES_RESOURCE_URL = "http://inventory-service/inventories";
 
