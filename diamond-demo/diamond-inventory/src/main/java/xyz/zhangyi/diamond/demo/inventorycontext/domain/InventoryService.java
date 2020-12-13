@@ -2,12 +2,14 @@ package xyz.zhangyi.diamond.demo.inventorycontext.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import xyz.zhangyi.diamond.demo.foundation.stereotype.DomainService;
 import xyz.zhangyi.diamond.demo.inventorycontext.acl.ports.repositories.InventoryRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@DomainService
 public class InventoryService {
     @Autowired
     private InventoryRepository inventoryRepository;

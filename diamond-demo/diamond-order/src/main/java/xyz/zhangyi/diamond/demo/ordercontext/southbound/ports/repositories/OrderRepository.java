@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.ordercontext.acl.ports.repositories;
+package xyz.zhangyi.diamond.demo.ordercontext.southbound.ports.repositories;
 
 import org.springframework.stereotype.Repository;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Port;

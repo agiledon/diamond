@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl;
+package xyz.zhangyi.diamond.demo.ordercontext.southbound.adapters.pl;
 
 import java.io.Serializable;
 

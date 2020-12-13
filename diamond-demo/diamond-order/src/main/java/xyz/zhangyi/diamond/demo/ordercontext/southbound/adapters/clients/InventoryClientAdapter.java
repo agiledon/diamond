@@ -1,14 +1,17 @@
-package xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.clients;
+package xyz.zhangyi.diamond.demo.ordercontext.southbound.adapters.clients;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Adapter;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.PortType;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.clients.InventoryClient;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.CheckingInventoryRequest;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.InventoryReviewResponse;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.LockingInventoryRequest;
+//import xyz.zhangyi.diamond.demo.inventorycontext.ohs.local.pl.CheckingInventoryRequest;
+//import xyz.zhangyi.diamond.demo.inventorycontext.ohs.local.pl.InventoryReviewResponse;
+import xyz.zhangyi.diamond.demo.ordercontext.southbound.adapters.pl.CheckingInventoryRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.southbound.adapters.pl.InventoryReviewResponse;
+import xyz.zhangyi.diamond.demo.ordercontext.southbound.ports.clients.InventoryClient;
+//import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.CheckingInventoryRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.southbound.adapters.pl.LockingInventoryRequest;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 

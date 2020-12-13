@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.ordercontext.ohs.local.appservices;
+package xyz.zhangyi.diamond.demo.ordercontext.northbound.local.appservices;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,11 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 import xyz.zhangyi.diamond.demo.foundation.exceptions.ApplicationException;
 import xyz.zhangyi.diamond.demo.foundation.exceptions.DomainException;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Local;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.publishers.EventPublisher;
+import xyz.zhangyi.diamond.demo.ordercontext.southbound.ports.publishers.EventPublisher;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.OrderService;
-import xyz.zhangyi.diamond.demo.ordercontext.ohs.local.pl.OrderPlaced;
-import xyz.zhangyi.diamond.demo.ordercontext.ohs.local.pl.PlacingOrderRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl.OrderPlaced;
+import xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl.PlacingOrderRequest;
 
 @Service
 @Local

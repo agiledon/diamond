@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.ordercontext.ohs.local.pl;
+package xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl;
 
 import java.io.Serializable;
 

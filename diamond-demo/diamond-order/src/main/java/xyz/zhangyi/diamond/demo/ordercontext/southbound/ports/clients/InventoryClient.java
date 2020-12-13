@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.ordercontext.acl.ports.clients;
+package xyz.zhangyi.diamond.demo.ordercontext.southbound.ports.clients;
 
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Port;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.PortType;

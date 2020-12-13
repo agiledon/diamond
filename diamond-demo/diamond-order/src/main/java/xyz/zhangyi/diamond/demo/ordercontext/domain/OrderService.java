@@ -3,8 +3,8 @@ package xyz.zhangyi.diamond.demo.ordercontext.domain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.DomainService;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.clients.InventoryClient;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.repositories.OrderRepository;
+import xyz.zhangyi.diamond.demo.ordercontext.southbound.ports.clients.InventoryClient;
+import xyz.zhangyi.diamond.demo.ordercontext.southbound.ports.repositories.OrderRepository;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.exceptions.InvalidOrderException;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.exceptions.NotEnoughInventoryException;
 

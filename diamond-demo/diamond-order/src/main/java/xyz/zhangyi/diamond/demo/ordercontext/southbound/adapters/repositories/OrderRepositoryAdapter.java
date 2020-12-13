@@ -1,8 +1,8 @@
-package xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.repositories;
+package xyz.zhangyi.diamond.demo.ordercontext.southbound.adapters.repositories;
 
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Adapter;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.PortType;
-import xyz.zhangyi.diamond.demo.ordercontext.acl.ports.repositories.OrderRepository;
+import xyz.zhangyi.diamond.demo.ordercontext.southbound.ports.repositories.OrderRepository;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 
 @Adapter(PortType.Repository)

@@ -25,6 +25,11 @@
             <artifactId>diamond-foundation</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>xyz.zhangyi.diamond</groupId>
+            <artifactId>diamond-inventory</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
