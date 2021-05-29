@@ -9,8 +9,8 @@ import xyz.zhangyi.diamond.demo.foundation.exception.ApplicationException;
 import xyz.zhangyi.diamond.demo.foundation.exception.DomainException;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Local;
 import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.publishers.OrderPlacedEventPublisher;
-import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
-import xyz.zhangyi.diamond.demo.ordercontext.domain.OrderService;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.order.Order;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.order.OrderService;
 import xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl.OrderPlaced;
 import xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl.PlacingOrderRequest;
 

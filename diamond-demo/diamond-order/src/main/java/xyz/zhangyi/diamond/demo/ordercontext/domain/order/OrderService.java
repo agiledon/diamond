@@ -1,12 +1,15 @@
-package xyz.zhangyi.diamond.demo.ordercontext.domain;
+package xyz.zhangyi.diamond.demo.ordercontext.domain.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.DomainService;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
 import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.clients.InventoryClient;
 import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.repositories.OrderRepository;
-import xyz.zhangyi.diamond.demo.ordercontext.domain.exception.InvalidOrderException;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.exception.OrderException;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.exception.NotEnoughInventoryException;
+
+import java.util.Optional;
 
 @Service
 @DomainService
@@ -17,9 +20,7 @@ public class OrderService {
     private InventoryClient inventoryClient;
 
     public void placeOrder(Order order) {
-        if (order.isInvalid()) {
-            throw new InvalidOrderException();
-        }
+        order.validate();
 
         InventoryReview inventoryReview = inventoryClient.check(order);
         if (!inventoryReview.isAvailable()) {
@@ -28,5 +29,15 @@ public class OrderService {
 
         orderRepository.add(order);
         inventoryClient.lock(order);
+    }
+
+    public void cancelOrder(OrderId orderId) {
+        Optional<Order> optOrder = orderRepository.orderOf(orderId);
+        if (!optOrder.isPresent()) {
+            throw new OrderException("order is not found");
+        }
+        Order order = optOrder.get();
+        order.cancel();
+        orderRepository.save(order);
     }
 }

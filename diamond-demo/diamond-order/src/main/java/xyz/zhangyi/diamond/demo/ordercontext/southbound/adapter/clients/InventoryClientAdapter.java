@@ -13,7 +13,7 @@ import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.clients.InventoryCl
 //import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.CheckingInventoryRequest;
 import xyz.zhangyi.diamond.demo.ordercontext.southbound.adapter.pl.LockingInventoryRequest;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
-import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.order.Order;
 
 @Component
 @Adapter(PortType.Client)
