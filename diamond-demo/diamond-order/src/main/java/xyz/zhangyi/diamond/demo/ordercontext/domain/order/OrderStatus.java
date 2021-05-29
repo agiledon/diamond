@@ -1,5 +1,5 @@
 package xyz.zhangyi.diamond.demo.ordercontext.domain.order;
 
 public enum OrderStatus {
-    Canceled;
+    New, Registered, Granted, Shipped, Cancelled, Invoiced, Closed
 }
