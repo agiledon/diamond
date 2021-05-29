@@ -5,6 +5,7 @@ import xyz.zhangyi.diamond.demo.ordercontext.domain.exception.OrderException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Aggregate
 public class Order {
@@ -38,5 +39,9 @@ public class Order {
                 orderItems.remove(nextItem);
             }
         }
+    }
+
+    public List<Product> purchasedProducts() {
+        return orderItems.stream().map(i -> i.purchased()).collect(Collectors.toList());
     }
 }

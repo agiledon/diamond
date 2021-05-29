@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.DomainService;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
+import xyz.zhangyi.diamond.demo.ordercontext.domain.shoppingcart.ShoppingCartService;
 import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.clients.InventoryClient;
 import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.repositories.OrderRepository;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.exception.OrderException;
@@ -18,6 +19,8 @@ public class OrderService {
     private OrderRepository orderRepository;
     @Autowired
     private InventoryClient inventoryClient;
+    @Autowired
+    private ShoppingCartService shoppingCartService;
 
     public void placeOrder(Order order) {
         order.validate();
@@ -28,6 +31,7 @@ public class OrderService {
         }
 
         orderRepository.add(order);
+        shoppingCartService.removeItems(order.purchasedProducts());
         inventoryClient.lock(order);
     }
 

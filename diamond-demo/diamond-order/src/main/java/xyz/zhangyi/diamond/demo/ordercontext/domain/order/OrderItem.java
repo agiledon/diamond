@@ -1,17 +1,19 @@
 package xyz.zhangyi.diamond.demo.ordercontext.domain.order;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class OrderItem {
     private String id;
-    private List<Product> purchased;
+    private Product purchasedProduct;
 
-    public OrderItem() {
-        purchased = new ArrayList<>();
+    public OrderItem(String id, Product purchasedProduct) {
+        this.id = id;
+        this.purchasedProduct = purchasedProduct;
     }
 
     public String id() {
         return id;
+    }
+
+    public Product purchased() {
+        return purchasedProduct;
     }
 }
