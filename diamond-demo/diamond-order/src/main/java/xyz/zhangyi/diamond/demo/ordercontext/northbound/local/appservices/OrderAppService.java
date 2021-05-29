@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import xyz.zhangyi.diamond.demo.foundation.exception.ApplicationException;
 import xyz.zhangyi.diamond.demo.foundation.exception.DomainException;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Local;
-import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.publishers.EventPublisher;
+import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.publishers.OrderPlacedEventPublisher;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.Order;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.OrderService;
 import xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl.OrderPlaced;
@@ -20,7 +20,7 @@ public class OrderAppService {
     @Autowired
     private OrderService orderService;
     @Autowired
-    private EventPublisher eventPublisher;
+    private OrderPlacedEventPublisher orderPlacedEventPublisher;
 
     private static final Logger logger = LoggerFactory.getLogger(OrderAppService.class);
 
@@ -31,7 +31,7 @@ public class OrderAppService {
             orderService.placeOrder(order);
 
             OrderPlaced orderPlaced = OrderPlaced.from(order);
-            eventPublisher.publish(orderPlaced);
+            orderPlacedEventPublisher.publish(orderPlaced);
         } catch (DomainException ex) {
             logger.warn(ex.getMessage());
             throw new ApplicationException(ex.getMessage(), ex);

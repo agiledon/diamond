@@ -6,7 +6,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import xyz.zhangyi.diamond.demo.notificationcontext.ohs.local.handler.OrderPlacedEventHandler;
 import xyz.zhangyi.diamond.demo.notificationcontext.ohs.local.pl.OrderPlaced;
 
-public class EventSubscriber {
+public class OrderPlacedEventSubscriber {
     @Autowired
     private OrderPlacedEventHandler eventHandler;
 

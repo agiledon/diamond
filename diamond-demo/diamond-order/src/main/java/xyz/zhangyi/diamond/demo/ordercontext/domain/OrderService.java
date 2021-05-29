@@ -17,7 +17,7 @@ public class OrderService {
     private InventoryClient inventoryClient;
 
     public void placeOrder(Order order) {
-        if (!order.isInvalid()) {
+        if (order.isInvalid()) {
             throw new InvalidOrderException();
         }
 
