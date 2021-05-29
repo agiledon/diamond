@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 @Aggregate
 public class Order {
     private OrderId id;
+    private String customerId;
     private OrderStatus status;
     private List<OrderItem> orderItems;
 
@@ -43,5 +44,9 @@ public class Order {
 
     public List<Product> purchasedProducts() {
         return orderItems.stream().map(i -> i.purchased()).collect(Collectors.toList());
+    }
+
+    public String customerId() {
+        return customerId;
     }
 }

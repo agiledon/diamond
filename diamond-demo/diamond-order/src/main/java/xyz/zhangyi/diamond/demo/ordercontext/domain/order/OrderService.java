@@ -31,7 +31,7 @@ public class OrderService {
         }
 
         orderRepository.add(order);
-        shoppingCartService.removeItems(order.purchasedProducts());
+        shoppingCartService.removeItems(order.customerId(), order.purchasedProducts());
         inventoryClient.lock(order);
     }
 
