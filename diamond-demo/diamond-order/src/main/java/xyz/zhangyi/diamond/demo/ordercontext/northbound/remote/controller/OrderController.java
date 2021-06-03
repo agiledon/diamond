@@ -19,7 +19,7 @@ public class OrderController
 
     @PostMapping
     public void placeOrder(PlacingOrderRequest request) {
-        // validate request
+        // validate request ?
         orderAppService.placeOrder(request);
     }
 }

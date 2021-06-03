@@ -8,6 +8,6 @@ import xyz.zhangyi.diamond.demo.ordercontext.domain.order.Order;
 @MessageContract(Direction.North)
 public class OrderPlaced extends ApplicationEvent {
     public static OrderPlaced from(Order order) {
-        return null;
+        return new OrderPlaced();
     }
 }

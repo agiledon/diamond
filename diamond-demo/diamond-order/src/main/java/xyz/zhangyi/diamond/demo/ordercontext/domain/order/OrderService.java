@@ -36,12 +36,22 @@ public class OrderService {
     }
 
     public void cancelOrder(OrderId orderId) {
+        Order order = loadOrder(orderId);
+        order.cancel();
+        orderRepository.save(order);
+    }
+
+    public void removeItems(OrderId orderId, String orderItemId) {
+        Order order = loadOrder(orderId);
+        order.removeItem(orderItemId);
+        orderRepository.save(order);
+    }
+
+    private Order loadOrder(OrderId orderId) {
         Optional<Order> optOrder = orderRepository.orderOf(orderId);
         if (!optOrder.isPresent()) {
             throw new OrderException("order is not found");
         }
-        Order order = optOrder.get();
-        order.cancel();
-        orderRepository.save(order);
+        return optOrder.get();
     }
 }
