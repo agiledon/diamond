@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl;
+package xyz.zhangyi.diamond.demo.ordercontext.message;
 
 import xyz.zhangyi.diamond.demo.foundation.model.pl.ApplicationEvent;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Direction;

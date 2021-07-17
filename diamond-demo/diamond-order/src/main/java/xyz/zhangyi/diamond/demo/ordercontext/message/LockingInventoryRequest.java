@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.ordercontext.southbound.adapter.pl;
+package xyz.zhangyi.diamond.demo.ordercontext.message;
 
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Direction;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.MessageContract;

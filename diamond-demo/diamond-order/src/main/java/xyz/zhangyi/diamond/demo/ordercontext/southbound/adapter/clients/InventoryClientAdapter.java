@@ -7,11 +7,11 @@ import xyz.zhangyi.diamond.demo.foundation.stereotype.Adapter;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.PortType;
 //import xyz.zhangyi.diamond.demo.inventorycontext.ohs.local.pl.CheckingInventoryRequest;
 //import xyz.zhangyi.diamond.demo.inventorycontext.ohs.local.pl.InventoryReviewResponse;
-import xyz.zhangyi.diamond.demo.ordercontext.southbound.adapter.pl.CheckingInventoryRequest;
-import xyz.zhangyi.diamond.demo.ordercontext.southbound.adapter.pl.InventoryReviewResponse;
+import xyz.zhangyi.diamond.demo.ordercontext.message.CheckingInventoryRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.message.InventoryReviewResponse;
 import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.clients.InventoryClient;
 //import xyz.zhangyi.diamond.demo.ordercontext.acl.adapters.pl.CheckingInventoryRequest;
-import xyz.zhangyi.diamond.demo.ordercontext.southbound.adapter.pl.LockingInventoryRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.message.LockingInventoryRequest;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.order.Order;
 

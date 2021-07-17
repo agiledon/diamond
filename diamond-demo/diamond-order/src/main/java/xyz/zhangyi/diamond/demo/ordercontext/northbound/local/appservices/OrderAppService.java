@@ -11,8 +11,8 @@ import xyz.zhangyi.diamond.demo.foundation.stereotype.Local;
 import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.publishers.OrderPlacedEventPublisher;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.order.Order;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.order.OrderService;
-import xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl.OrderPlaced;
-import xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl.PlacingOrderRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.message.OrderPlaced;
+import xyz.zhangyi.diamond.demo.ordercontext.message.PlacingOrderRequest;
 
 @Service
 @Local

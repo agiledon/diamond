@@ -12,15 +12,21 @@ public class ShoppingCartService {
     private ShoppingCartRepository shoppingCartRepo;
 
     public void removeItems(String customerId, List<Product> purchasedProducts) {
+        ShoppingCart shoppingCart = loadShoppingCart(customerId);
+        if (shoppingCart == null) return;
+
+        shoppingCart.removeItems(purchasedProducts);
+        shoppingCartRepo.save(shoppingCart);
+    }
+
+    private ShoppingCart loadShoppingCart(String customerId) {
         Optional<ShoppingCart> optionalShoppingCart = shoppingCartRepo.customerShoppingCart(customerId);
 
         if (!optionalShoppingCart.isPresent()) {
-            return;
+            return null;
         }
 
         ShoppingCart shoppingCart = optionalShoppingCart.get();
-        shoppingCart.removeItems(purchasedProducts);
-
-        shoppingCartRepo.save(shoppingCart);
+        return shoppingCart;
     }
 }

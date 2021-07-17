@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.Remote;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.RemoteType;
 import xyz.zhangyi.diamond.demo.ordercontext.northbound.local.appservices.OrderAppService;
-import xyz.zhangyi.diamond.demo.ordercontext.northbound.local.pl.PlacingOrderRequest;
+import xyz.zhangyi.diamond.demo.ordercontext.message.PlacingOrderRequest;
 
 @RestController
 @RequestMapping(value="/orders")
