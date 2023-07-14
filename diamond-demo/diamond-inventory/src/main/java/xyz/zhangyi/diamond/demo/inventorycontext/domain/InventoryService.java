@@ -3,7 +3,7 @@ package xyz.zhangyi.diamond.demo.inventorycontext.domain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.DomainService;
-import xyz.zhangyi.diamond.demo.inventorycontext.acl.port.repository.InventoryRepository;
+import xyz.zhangyi.diamond.demo.inventorycontext.south.port.repository.InventoryRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -2,7 +2,7 @@ package xyz.zhangyi.diamond.demo.ordercontext.domain.shoppingcart;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.order.Product;
-import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.repositories.ShoppingCartRepository;
+import xyz.zhangyi.diamond.demo.ordercontext.south.port.repositories.ShoppingCartRepository;
 
 import java.util.List;
 import java.util.Optional;

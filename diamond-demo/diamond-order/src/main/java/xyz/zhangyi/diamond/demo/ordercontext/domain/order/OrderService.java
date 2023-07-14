@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import xyz.zhangyi.diamond.demo.foundation.stereotype.DomainService;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.InventoryReview;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.shoppingcart.ShoppingCartService;
-import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.clients.InventoryClient;
-import xyz.zhangyi.diamond.demo.ordercontext.southbound.port.repositories.OrderRepository;
+import xyz.zhangyi.diamond.demo.ordercontext.south.port.clients.InventoryClient;
+import xyz.zhangyi.diamond.demo.ordercontext.south.port.repositories.OrderRepository;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.exception.OrderException;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.exception.NotEnoughInventoryException;
 
