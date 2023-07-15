@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.zhangyi.diamond.demo.inventorycontext.north.local.appservice.InventoryAppService;
-import xyz.zhangyi.diamond.demo.inventorycontext.north.local.message.CheckingInventoryRequest;
-import xyz.zhangyi.diamond.demo.inventorycontext.north.local.message.InventoryReviewResponse;
+import xyz.zhangyi.diamond.demo.inventorycontext.north.message.CheckingInventoryRequest;
+import xyz.zhangyi.diamond.demo.inventorycontext.north.message.InventoryReviewResponse;
 
 @RestController
 @RequestMapping(value="/inventories")

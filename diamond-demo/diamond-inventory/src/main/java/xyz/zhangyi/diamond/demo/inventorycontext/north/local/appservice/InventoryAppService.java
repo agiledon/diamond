@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xyz.zhangyi.diamond.demo.inventorycontext.domain.InventoryReview;
 import xyz.zhangyi.diamond.demo.inventorycontext.domain.InventoryService;
-import xyz.zhangyi.diamond.demo.inventorycontext.north.local.message.CheckingInventoryRequest;
-import xyz.zhangyi.diamond.demo.inventorycontext.north.local.message.InventoryReviewResponse;
+import xyz.zhangyi.diamond.demo.inventorycontext.north.message.CheckingInventoryRequest;
+import xyz.zhangyi.diamond.demo.inventorycontext.north.message.InventoryReviewResponse;
 
 @Service
 public class InventoryAppService {

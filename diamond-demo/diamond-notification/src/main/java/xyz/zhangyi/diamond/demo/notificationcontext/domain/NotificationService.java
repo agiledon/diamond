@@ -2,8 +2,8 @@ package xyz.zhangyi.diamond.demo.notificationcontext.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xyz.zhangyi.diamond.demo.notificationcontext.acl.port.client.CustomerClient;
-import xyz.zhangyi.diamond.demo.notificationcontext.acl.port.client.SmsClient;
+import xyz.zhangyi.diamond.demo.notificationcontext.south.port.client.CustomerClient;
+import xyz.zhangyi.diamond.demo.notificationcontext.south.port.client.SmsClient;
 
 @Service
 public class NotificationService {
