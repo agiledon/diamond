@@ -1,12 +1,14 @@
 package xyz.zhangyi.diamond.demo.ordercontext.domain.shoppingcart;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import xyz.zhangyi.diamond.demo.foundation.stereotype.DomainService;
 import xyz.zhangyi.diamond.demo.ordercontext.domain.order.Product;
 import xyz.zhangyi.diamond.demo.ordercontext.south.port.repositories.ShoppingCartRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+@DomainService
 public class ShoppingCartService {
     @Autowired
     private ShoppingCartRepository shoppingCartRepo;

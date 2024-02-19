@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 @Port(PortType.Repository)
-public interface InventoryRepository {
+public interface ProductRepository {
     List<Product> productsOf(List<String> productIds);
 }

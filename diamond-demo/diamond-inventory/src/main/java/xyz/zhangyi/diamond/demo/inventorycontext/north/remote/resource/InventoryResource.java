@@ -6,12 +6,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import xyz.zhangyi.diamond.demo.foundation.stereotype.Remote;
+import xyz.zhangyi.diamond.demo.foundation.stereotype.RemoteType;
 import xyz.zhangyi.diamond.demo.inventorycontext.north.local.appservice.InventoryAppService;
 import xyz.zhangyi.diamond.demo.inventorycontext.north.message.CheckingInventoryRequest;
 import xyz.zhangyi.diamond.demo.inventorycontext.north.message.InventoryReviewResponse;
 
 @RestController
 @RequestMapping(value="/inventories")
+@Remote(RemoteType.Resource)
 public class InventoryResource {
     @Autowired
     private InventoryAppService inventoryAppService;

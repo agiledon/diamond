@@ -1,4 +1,4 @@
-package xyz.zhangyi.diamond.demo.foundation.model.pl;
+package xyz.zhangyi.diamond.demo.foundation.model.message;
 
 import java.io.Serializable;
 
